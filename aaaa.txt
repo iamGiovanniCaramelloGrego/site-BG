@@ -1,0 +1,24 @@
+1.1 Abstração de recursos
+
+passos principais na abertura de um ARQUIVO em um leitor de disquete:
+1- verificar se os parâmetros informados estão corretos (nome do arquivo, identifica-dor do leitor de disquete, buffer de leitura, etc);
+2- verificar se o leitor de disquetes está disponível;
+3- verificar se o leitor contém um disquete;
+4- ligar o motor do leitor e aguardar atingir a velocidade de rotação correta;
+5- posicionar a cabeça de leitura sobre a trilha onde está a tabela de diretório;
+6- ler a tabela de diretório e localizar o arquivo ou subdiretório desejado;
+7- mover a cabeça de leitura para a posição do bloco inicial do arquivo;
+8- ler o bloco inicial do arquivo e depositá-lo em um buffer de memória.
+
+deste modo, o sistema operacional deve definir interfaces abstratas para os recursos de hardware, buscando resolver os seguintes objetivos:
+
+* prover interfaces de acesso aos dispositivos, mais simplesde usar que as interface debaixo nível, para simplificar a construção de programas aplicativos.
+ex:"para ler dados de um disco rígido, uma aplicação usa um conceito chamadoarquivo, que implementa uma visão abstrata do disco rígido, acessível através deoperações comoopen,readeclose. Caso tivesse de acessar o disco diretamente,teria de manipular portas de entrada/saída e registradores com comandos parao controlador de disco (sem falar na dificuldade de localizar osdados desejadosdentro do disco)."
+
+* tornar aplicativos que sejam independentes do hardware.
+
+* definir interfaces de acesso homogêneas para dispositivis de tecnologias diferentes.
+
+1.2 Gerência de recursos
+
+programas aplicativos usam o hardware para alcançar suas metas: navegar na internet, tocar musicas desejadas, ler, armazz
